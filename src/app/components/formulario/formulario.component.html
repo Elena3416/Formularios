@@ -9,295 +9,23 @@
       <div class="alert alert-primary" role="alert">
         <strong
           >Would you like to create a Blue Nile Account and store this
-          information</strong>
+          information</strong
+        >
         <div class="btn-group" data-toggle="buttons">
-          <label>
-            <input type="radio" name="" id="" autocomplete="off" checked class="ml-5"/>Yes
-          </label>
-          <label class="active">
-            <input type="radio" name="" id="" autocomplete="off" class="ml-5"/>No
-          </label>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Ng container va hacer un grupo de formularios y va a estar declarada a la propiedad
-  formulario -->
-  <ng-container [formGroup]="formulario">
-  <div class="row">
-    <div class="col-2">
-      <label><strong>*First Name</strong></label>
-    </div>
-    <div class="col-4">
-      <div class="form-group">
-        <input appUppercaseletters type="text" class="form-control"
-          [ngClass]="{'is-valid': Validarform('firstName').error==false,
-          'is-invalid': Validarform('firstName').error==true}"
-          formControlName="firstName"
-          placeholder="Enter your First Name"/>
-      </div>
-      <div *ngIf="Validarform('firstName').error" class="invalid-feedback d-block mb-3 text-center" 
-      style="font-size: 15px;">
-        {{Validarform('firstName').message}}
-      </div>
-    </div>
-    <div class="col-2" [formGroup]="formulario">
-      <label for=""><strong>*Address</strong></label>
-    </div>
-    <div class="col-4">
-      <div class="form-group">
-        <input
-          appUppercaseletters
-          type="text"
-          class="form-control"
-          [ngClass]="{'is-valid': Validarform('address').error==false,
-          'is-invalid': Validarform('address').error==true}"
-          formControlName="address"
-          placeholder="Enter your address"
-        />
-      </div>
-      <div *ngIf="Validarform('address').error" class="invalid-feedback d-block mb-3 text-center" 
-      style="font-size: 15px;">
-        {{Validarform('address').message}}
-      </div>
-    </div>
-  </div>
-  <div class="row" [formGroup]="formulario">
-    <div class="col-2">
-      <label for=""><strong>*Last Name</strong></label>
-    </div>
-    <div class="col-4">
-      <div class="form-group">
-        <input appUppercaseletters type="text" class="form-control"
-          [ngClass]="{'is-valid': Validarform('lastName').error==false,
-          'is-invalid': Validarform('lastName').error==true}"
-          formControlName="lastName"
-          placeholder="Enter your last Name"/>
-      </div>
-      <div *ngIf="Validarform('lastName').error" class="invalid-feedback d-block mb-3 text-center" 
-      style="font-size: 15px;">
-        {{Validarform('lastName').message}}
-      </div>
-    </div>
-    <div class="col-2" [formGroup]="formulario">
-        <label for=""><strong>*City</strong></label>
-      </div>
-      <div class="col-4">
-        <div class="form-group">
-          <input appUppercaseletters type="text" class="form-control" 
-          [ngClass]="{'is-valid': Validarform('city').error==false,
-          'is-invalid': Validarform('city').error==true}"
-          formControlName="city"
-          placeholder="Enter your City" />
-        </div>
-        <div *ngIf="Validarform('city').error" class="invalid-feedback d-block mb-3 text-center" 
-        style="font-size: 15px;">
-          {{Validarform('city').message}}
-        </div>
-      </div>
-  </div>
-  <div class="row" [formGroup]="formulario">
-    <div class="col-2">
-      <label for=""><strong>*Company</strong></label>
-    </div>
-    <div class="col-4">
-      <div class="form-group">
-        <input
-          appUppercaseletters
-          type="text"
-          class="form-control"
-          [ngClass]="{'is-valid': Validarform('company').error==false,
-          'is-invalid': Validarform('company').error==true}"
-          formControlName="company"
-          placeholder="Enter your company"
-        />
-      </div>
-      <div *ngIf="Validarform('company').error" class="invalid-feedback d-block mb-3 text-center" 
-      style="font-size: 15px;">
-        {{Validarform('company').message}}
-      </div>
-    </div>
-    <div class="col-2" [formGroup]="formulario">
-        <label for=""><strong>*Zip code</strong></label>
-      </div>
-      <div class="col-4">
-        <div class="form-group">
-          <input
-            type="text"
-            class="form-control"
-            [ngClass]="{'is-valid': Validarform('zipcode').error==false, 
-            'is-invalid': Validarform('zipcode').error==true}"
-            formControlName="zipcode"
-            placeholder="Enter your zip code"
-          />
-        </div>
-        <div *ngIf="Validarform('zipcode')" class="invalid-feedback d-block mb-3 text-center" 
-        style="font-size: 15px;">
-        {{Validarform('zipcode').message}}
-      </div>
-  </div>
-  </div>
-  <div class="row" [formGroup]="formulario">
-    <div class="col-2">
-      <label for=""><strong>*Phone</strong></label>
-    </div>
-    <div class="col-2">
-      <div class="form-group">
-        <input
-          type="tel"
-          class="form-control"
-          [ngClass]="{'is-valid': Validarform('phone').error==false, 
-            'is-invalid': Validarform('phone').error==true}"
-            formControlName="phone"
-          placeholder="Enter your phone"
-        />
-        <label class="ml-4">Phone number</label>
-      </div>
-      <div class="row" style="margin-left: 15%;">
-        <div *ngIf="Validarform('phone')" class="invalid-feedback d-block mb-3 ml-5" 
-        style="font-size: 15px;">
-        {{Validarform('phone').message}}
-      </div>
-    </div>
-    </div>
-    <div class="col-2" [formGroup]=formulario>
-      <div class="form-group">
-        <input type="tel"
-          class="form-control"
-          [ngClass]="{'is-valid': Validarform('extension').error==false, 
-          'is-invalid': Validarform('extension').error==true}"
-          placeholder="Ext"
-          formControlName="extension"
-        />
-        <label class="ml-5">Ext.</label>
-      </div>
-      <div *ngIf="Validarform('extension')" class="invalid-feedback d-block mb-3 text-center" 
-        style="font-size: 15px;">
-        {{Validarform('extension').message}}
-      </div>
-    </div>
-    <div class="col-2" [formGroup]="formulario">
-      <div class="form-group">
-        <input type="text"
-          class="form-control"
-          [ngClass]="{'is-valid': Validarform('interior').error==false, 
-          'is-invalid': Validarform('interior').error==true}"
-          placeholder="Int"
-          formControlName="interior"
-        />
-        <label class="ml-5">Int.</label>
-      </div>
-      <div *ngIf="Validarform('interior')" class="invalid-feedback d-block mb-3 text-center" 
-        style="font-size: 15px;">
-        {{Validarform('interior').message}}
-      </div>
-    </div>
-  </div>
-  <div class="row"> 
-    <div class="col-2" [formGroup]="formulario">
-      <label for=""><strong>*Email</strong></label>
-    </div>
-    <div class="col-4">
-      <div class="form-group">
-        <input
-          type="email"
-          class="form-control"
-          [ngClass]="{'is-valid': Validarform('email').error==false, 
-          'is-invalid': Validarform('email').error==true}"
-          formControlName="email"
-          placeholder="Enter your email"
-        />
-      </div>
-      <div *ngIf="Validarform('email')" class="invalid-feedback d-block mb-3 text-center" 
-        style="font-size: 15px;">
-        {{Validarform('email').message}}
-      </div>
-    </div>
-    <div class="col-2">
-      <label for=""><strong>*Country</strong></label>
-    </div>
-    <div class="col-4">
-      <div class="form-group">
-        <select class="form-control"    
-        [ngClass]="{'is-valid': Validarform('country').error==false, 
-        'is-invalid': Validarform('country').error==true}"
-        formControlName="country" >
-          <option value="">Selecciona una opción</option>
-          <option *ngFor="let country of CountriesName" [value]="country">
-            {{country}}
-          </option>
-        </select>
-      </div>
-      <div *ngIf="Validarform('country')" class="invalid-feedback d-block mb-3 text-center" 
-      style="font-size: 15px;">
-      {{Validarform('country').message}}
-    </div>
-    </div>
-  </div>    
-  <div class="row" [formGroup]="formulario">
-    <div class="col-2">
-      <label for=""><strong>*Re-type Email</strong></label>
-    </div>
-    <div class="col-4">
-      <div class="form-group">
-        <input
-          type="email"
-          class="form-control"
-          [ngClass]="{'is-valid': Validarform('repeatemail').error==false, 
-          'is-invalid': Validarform('repeatemail').error==true}"
-          formControlName="repeatemail"
-          placeholder="re-type your email"
-        />
-      </div>
-      <div *ngIf="Validarform('repeatemail')" class="invalid-feedback d-block mb-3 text-center" 
-        style="font-size: 15px;">
-        {{Validarform('repeatemail').message}}
-      </div>
-    </div>
-    <div class="col-2">
-      <label for=""><strong>*Address Type</strong></label>
-    </div>
-    <div class="col-4">
-      <div class="custom-control custom-radio">
-        <input type="radio" id="customRadioInline1" name="addressType" 
-        formControlName="addressType" class="custom-control-input" value="Home">
-        <label class="custom-control-label" for="customRadioInline1">Home</label>
-      </div>
-      <div class="custom-control custom-radio e">
-        <input type="radio" id="customRadioInline2" name="addressType" 
-        formControlName="addressType" class="custom-control-input" value="Bussines">
-        <label class="custom-control-label" for="customRadioInline2">Bussines</label>
-      </div>
-    </div>
-    <div *ngIf="Validarform('addressType')" class="invalid-feedback d-block mb-3 text-center" 
-    style="font-size: 15px;">
-    {{Validarform('addressType').message}}
-  </div>
-  </div>
-  <div class="row">
-    <div class="col-2"></div>
-    <div class="col-4">
-      <label for=""
-        ><i>Enter an address when we can send an email confirming your order</i></label>
-    </div>
-  </div>
-  <div class="row mt-3">
-    <div class="col-6">
-      <label for="">
-        <strong
-          >Are you shipping this order to your billing address?</strong
-        ></label
-      >
-    </div>
-    <div class="col-6">
-      <div class="form-group">
-        <div class="btn-group" data-toggle="buttons">
-          <label>
-            <input type="radio" name="" id="" autocomplete="off" checked />Yes
-          </label>
           <label>
             <input
               type="radio"
+              name=""
+              id=""
+              autocomplete="off"
+              checked
+              class="ml-5"
+            />Yes
+          </label>
+          <label class="active">
+            <input
+              type="radio"
+              name=""
               id=""
               autocomplete="off"
               class="ml-5"
@@ -307,11 +35,394 @@
       </div>
     </div>
   </div>
-</ng-container>
+  <!-- Ng container va hacer un grupo de formularios y va a estar declarada a la propiedad
+  formulario -->
+  <ng-container [formGroup]="formulario">
+    <div class="row">
+      <div class="col-2">
+        <label><strong>*First Name</strong></label>
+      </div>
+      <div class="col-4">
+        <div class="form-group">
+          <input
+            appUppercaseletters
+            type="text"
+            class="form-control"
+            [ngClass]="{
+              'is-valid': Validarform('firstName').error == false,
+              'is-invalid': Validarform('firstName').error == true
+            }"
+            formControlName="firstName"
+            placeholder="Enter your First Name"
+          />
+        </div>
+        <div
+          *ngIf="Validarform('firstName').error"
+          class="invalid-feedback d-block mb-3 text-center"
+          style="font-size: 15px;"
+        >
+          {{ Validarform("firstName").message }}
+        </div>
+      </div>
+      <div class="col-2" [formGroup]="formulario">
+        <label for=""><strong>*Address</strong></label>
+      </div>
+      <div class="col-4">
+        <div class="form-group">
+          <input
+            appUppercaseletters
+            type="text"
+            class="form-control"
+            [ngClass]="{
+              'is-valid': Validarform('address').error == false,
+              'is-invalid': Validarform('address').error == true
+            }"
+            formControlName="address"
+            placeholder="Enter your address"
+          />
+        </div>
+        <div
+          *ngIf="Validarform('address').error"
+          class="invalid-feedback d-block mb-3 text-center"
+          style="font-size: 15px;"
+        >
+          {{ Validarform("address").message }}
+        </div>
+      </div>
+    </div>
+    <div class="row" [formGroup]="formulario">
+      <div class="col-2">
+        <label for=""><strong>*Last Name</strong></label>
+      </div>
+      <div class="col-4">
+        <div class="form-group">
+          <input
+            appUppercaseletters
+            type="text"
+            class="form-control"
+            [ngClass]="{
+              'is-valid': Validarform('lastName').error == false,
+              'is-invalid': Validarform('lastName').error == true
+            }"
+            formControlName="lastName"
+            placeholder="Enter your last Name"
+          />
+        </div>
+        <div
+          *ngIf="Validarform('lastName').error"
+          class="invalid-feedback d-block mb-3 text-center"
+          style="font-size: 15px;"
+        >
+          {{ Validarform("lastName").message }}
+        </div>
+      </div>
+      <div class="col-2" [formGroup]="formulario">
+        <label for=""><strong>*City</strong></label>
+      </div>
+      <div class="col-4">
+        <div class="form-group">
+          <input
+            appUppercaseletters
+            type="text"
+            class="form-control"
+            [ngClass]="{
+              'is-valid': Validarform('city').error == false,
+              'is-invalid': Validarform('city').error == true
+            }"
+            formControlName="city"
+            placeholder="Enter your City"
+          />
+        </div>
+        <div
+          *ngIf="Validarform('city').error"
+          class="invalid-feedback d-block mb-3 text-center"
+          style="font-size: 15px;"
+        >
+          {{ Validarform("city").message }}
+        </div>
+      </div>
+    </div>
+    <div class="row" [formGroup]="formulario">
+      <div class="col-2">
+        <label for=""><strong>*Company</strong></label>
+      </div>
+      <div class="col-4">
+        <div class="form-group">
+          <input
+            appUppercaseletters
+            type="text"
+            class="form-control"
+            [ngClass]="{
+              'is-valid': Validarform('company').error == false,
+              'is-invalid': Validarform('company').error == true
+            }"
+            formControlName="company"
+            placeholder="Enter your company"
+          />
+        </div>
+        <div
+          *ngIf="Validarform('company').error"
+          class="invalid-feedback d-block mb-3 text-center"
+          style="font-size: 15px;"
+        >
+          {{ Validarform("company").message }}
+        </div>
+      </div>
+      <div class="col-2" [formGroup]="formulario">
+        <label for=""><strong>*Zip code</strong></label>
+      </div>
+      <div class="col-4">
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            [ngClass]="{
+              'is-valid': Validarform('zipcode').error == false,
+              'is-invalid': Validarform('zipcode').error == true
+            }"
+            formControlName="zipcode"
+            placeholder="Enter your zip code"
+          />
+        </div>
+        <div
+          *ngIf="Validarform('zipcode')"
+          class="invalid-feedback d-block mb-3 text-center"
+          style="font-size: 15px;"
+        >
+          {{ Validarform("zipcode").message }}
+        </div>
+      </div>
+    </div>
+    <div class="row" [formGroup]="formulario">
+      <div class="col-2">
+        <label for=""><strong>*Phone</strong></label>
+      </div>
+      <div class="col-2">
+        <div class="form-group">
+          <input
+            type="tel"
+            class="form-control"
+            [ngClass]="{
+              'is-valid': Validarform('phone').error == false,
+              'is-invalid': Validarform('phone').error == true
+            }"
+            formControlName="phone"
+            placeholder="Enter your phone"
+          />
+          <label class="ml-4">Phone number</label>
+        </div>
+        <div class="row" style="margin-left: 15%;">
+          <div
+            *ngIf="Validarform('phone')"
+            class="invalid-feedback d-block mb-3 ml-5"
+            style="font-size: 15px;"
+          >
+            {{ Validarform("phone").message }}
+          </div>
+        </div>
+      </div>
+      <div class="col-2" [formGroup]="formulario">
+        <div class="form-group">
+          <input
+            type="tel"
+            class="form-control"
+            [ngClass]="{
+              'is-valid': Validarform('extension').error == false,
+              'is-invalid': Validarform('extension').error == true
+            }"
+            placeholder="Ext"
+            formControlName="extension"
+          />
+          <label class="ml-5">Ext.</label>
+        </div>
+        <div
+          *ngIf="Validarform('extension')"
+          class="invalid-feedback d-block mb-3 text-center"
+          style="font-size: 15px;"
+        >
+          {{ Validarform("extension").message }}
+        </div>
+      </div>
+      <div class="col-2" [formGroup]="formulario">
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            [ngClass]="{
+              'is-valid': Validarform('interior').error == false,
+              'is-invalid': Validarform('interior').error == true
+            }"
+            placeholder="Int"
+            formControlName="interior"
+          />
+          <label class="ml-5">Int.</label>
+        </div>
+        <div
+          *ngIf="Validarform('interior')"
+          class="invalid-feedback d-block mb-3 text-center"
+          style="font-size: 15px;"
+        >
+          {{ Validarform("interior").message }}
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-2" [formGroup]="formulario">
+        <label for=""><strong>*Email</strong></label>
+      </div>
+      <div class="col-4">
+        <div class="form-group">
+          <input
+            type="email"
+            class="form-control"
+            [ngClass]="{
+              'is-valid': Validarform('email').error == false,
+              'is-invalid': Validarform('email').error == true
+            }"
+            formControlName="email"
+            placeholder="Enter your email"
+          />
+        </div>
+        <div
+          *ngIf="Validarform('email')"
+          class="invalid-feedback d-block mb-3 text-center"
+          style="font-size: 15px;"
+        >
+          {{ Validarform("email").message }}
+        </div>
+      </div>
+      <div class="col-2">
+        <label for=""><strong>*Country</strong></label>
+      </div>
+      <div class="col-4">
+        <div class="form-group">
+          <select
+            class="form-control"
+            [ngClass]="{
+              'is-valid': Validarform('country').error == false,
+              'is-invalid': Validarform('country').error == true
+            }"
+            formControlName="country"
+          >
+            <option value="">Selecciona una opción</option>
+            <option *ngFor="let country of CountriesName" [value]="country">
+              {{ country }}
+            </option>
+          </select>
+        </div>
+        <div
+          *ngIf="Validarform('country')"
+          class="invalid-feedback d-block mb-3 text-center"
+          style="font-size: 15px;"
+        >
+          {{ Validarform("country").message }}
+        </div>
+      </div>
+    </div>
+    <div class="row" [formGroup]="formulario">
+      <div class="col-2">
+        <label for=""><strong>*Re-type Email</strong></label>
+      </div>
+      <div class="col-4">
+        <div class="form-group">
+          <input
+            type="email"
+            class="form-control"
+            [ngClass]="{
+              'is-valid': Validarform('repeatemail').error == false,
+              'is-invalid': Validarform('repeatemail').error == true
+            }"
+            formControlName="repeatemail"
+            placeholder="re-type your email"
+          />
+        </div>
+        <div
+          *ngIf="Validarform('repeatemail')"
+          class="invalid-feedback d-block mb-3 text-center"
+          style="font-size: 15px;"
+        >
+          {{ Validarform("repeatemail").message }}
+        </div>
+      </div>
+      <div class="col-2">
+        <label for=""><strong>*Address Type</strong></label>
+      </div>
+      <div class="col-4">
+        <div class="custom-control custom-radio">
+          <input
+            type="radio"
+            id="customRadioInline1"
+            name="addressType"
+            formControlName="addressType"
+            class="custom-control-input"
+            value="Home"
+          />
+          <label class="custom-control-label" for="customRadioInline1"
+            >Home</label
+          >
+        </div>
+        <div class="custom-control custom-radio e">
+          <input
+            type="radio"
+            id="customRadioInline2"
+            name="addressType"
+            formControlName="addressType"
+            class="custom-control-input"
+            value="Bussines"
+          />
+          <label class="custom-control-label" for="customRadioInline2"
+            >Bussines</label
+          >
+        </div>
+      </div>
+      <div
+        *ngIf="Validarform('addressType')"
+        class="invalid-feedback d-block mb-3 text-center"
+        style="font-size: 15px;"
+      >
+        {{ Validarform("addressType").message }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-4">
+        <label for=""
+          ><i
+            >Enter an address when we can send an email confirming your order</i
+          ></label
+        >
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-6">
+        <label for="">
+          <strong
+            >Are you shipping this order to your billing address?</strong
+          ></label
+        >
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <div class="btn-group" data-toggle="buttons">
+            <label>
+              <input type="radio" name="" id="" autocomplete="off" checked />Yes
+            </label>
+            <label>
+              <input type="radio" id="" autocomplete="off" class="ml-5" />No
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
   <div class="row mb-4">
     <div class="col-12">
-      <button class="btn btn-outline-primary btn-block" (click)="MostrarFormulario()"
-      *ngIf="!formulario.invalid" type="button">
+      <button
+        class="btn btn-outline-primary btn-block"
+        (click)="MostrarFormulario()"
+        *ngIf="!formulario.invalid"
+        type="button"
+      >
         Save Information
       </button>
     </div>
